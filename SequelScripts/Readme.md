@@ -1,1 +1,1 @@
-Basic tsql script examples
+Basic tsql script examples.
