@@ -3,14 +3,12 @@ if(OBJECT_ID('Cows') is not null)
 go
 
 create table Cows (
+	ID int primary key identity(1,1),
 	Name varchar(50),
 	MooCount int
 	)
 
-insert into Cows values
-	('Betsy', 10)
-
-insert into Cows default values
+insert into Cows values('Betsy', 10)
 
 
 select *
