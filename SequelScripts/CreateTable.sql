@@ -9,12 +9,15 @@ create table PubMembers (
 	startdate datetime not null,
 	enddate datetime null,
 	Age int constraint LegalAge check(Age >= 18),
-	
+
+	unique(FirstName, LastName, Age),
 	check(startdate < enddate)
 	)
 
-insert into PubMembers values('Willy', 'Wonka', GETDATE(), DATEADD(year, 1, getdate()), 30)
+insert into PubMembers values('Willy', 'Wonka', DATEADD(year, -1, getdate()), GETDATE(), 30)
+insert into PubMembers values('Charlie', 'Donk', GETDATE(), null, 21)
 
+alter table PubMembers add Email varchar(100) default null
 
 select *
 from PubMembers
