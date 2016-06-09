@@ -17,7 +17,7 @@ create table Cars(
 	PlateNumber char(6) primary key,
 	Make varchar(50),
 	Model varchar(50),
-	OwnedID int references People (ID) on delete cascade,
+	OwnerID int references People (ID) on delete cascade,
 )
 
 insert into People values ('Charlie', 'Bean', 24, 'charlie@bean.info')
